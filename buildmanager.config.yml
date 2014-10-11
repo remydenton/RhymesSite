@@ -17,5 +17,6 @@ subtrees:
 postbuild-commands:
   # Restore symlinks to assets.
   - 'git checkout docroot/sites/default'
+  - 'git checkout docroot/sites/all/modules/custom/com_rhymessite_www'
   # Remove stuff we don't want.
   - 'rm docroot/.gitignore'
