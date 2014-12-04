@@ -11,7 +11,7 @@ core = 7.x
 ; But when drupal.org packages up Rhymes Distro, it will put rhymes module here:
 ;   profiles/rhymesdistro/modules/contrib/rhymes
 ;
-; Drupal.org's distro builder does not currently support Drush 7.x's
+; Drupal.org's distro builder does not currently support Drush 6.x and 7.x's
 ; contrib_destination property. As a result, drupal.org nests contrib projects
 ; (modules) inside another contrib project (the rhymesdistro install profile).
 ; For maintainers who work on their contrib projects inside site repositories,
@@ -21,22 +21,18 @@ core = 7.x
 ; The issue is being tracked here:
 ;   https://drupal.org/node/2281721
 ;
-; Support for contrib_destination was committed to Drush 7.x here:
+; Support for contrib_destination was committed to Drush 6.x and 7.x here:
 ;   https://github.com/drush-ops/drush/pull/582
+;   https://github.com/drush-ops/drush/pull/835
 ;
-; Patches to backport contrib_destination to Drush 6.x and 5.x are here:
+; Patch to backport contrib_destination to Drush 5.x is here:
 ;  - 5.x, https://github.com/drush-ops/drush/issues/836
-;  - 6.x, https://github.com/drush-ops/drush/issues/834
-;
-; Working forks of Drush with the patch applied can be downloaded here:
-;  - 5.x, https://github.com/bryanhirsch/drush/tree/5.x
-;  - 6.x, https://github.com/bryanhirsch/drush/tree/6.x
 ;
 defaults[projects][subdir] = rhymesdistro
 defaults[projects][contrib_destination] = sites/all
 
 projects[ctools][version] = 1.3
-projects[features][version] = 2.0
+projects[features][version] = 2.1
 projects[views][version] = 3.7
 projects[youtube][version] = 1.1
 
